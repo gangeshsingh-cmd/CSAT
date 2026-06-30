@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-Day CSAT Booster Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15212b;
+    --ink-soft:#3a4a57;
+    --paper:#fbfaf6;
+    --teal:#0f6e6e;
+    --teal-d:#0a4f4f;
+    --teal-l:#e3f0ef;
+    --amber:#e88c1a;
+    --amber-l:#fdf0dd;
+    --line:#d9d4c7;
+    --green:#2f8f4e;
+    --green-l:#e4f2e8;
+    --rule:1.5px solid var(--line);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Archivo',sans-serif;
+    color:var(--ink);
+    background:#ece8dd;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    width:210mm;
+    min-height:297mm;
+    margin:14px auto;
+    background:var(--paper);
+    padding:14mm 16mm 12mm;
+    position:relative;
+    box-shadow:0 6px 28px rgba(0,0,0,.14);
+  }
+  @media print{
+    body{background:#fff;}
+    .page{margin:0;box-shadow:none;width:auto;min-height:0;height:auto;page-break-after:always;break-after:page;}
+    .page:last-child{page-break-after:auto;break-after:auto;}
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:linear-gradient(160deg,#0f6e6e 0%,#0a4f4f 60%,#063838 100%);
+    color:#fff;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .cover .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:#9fe0d8;}
+  .cover h1{font-size:62px;line-height:1.0;font-weight:700;margin:18px 0 14px;}
+  .cover h1 span{color:var(--amber);}
+  .cover .sub{font-size:19px;max-width:430px;color:#dff1ee;font-weight:400;}
+  .cover-badge{
+    display:inline-block;margin-top:26px;background:rgba(255,255,255,.12);
+    border:1.5px solid rgba(255,255,255,.35);border-radius:40px;
+    padding:9px 22px;font-size:14px;font-weight:600;letter-spacing:.5px;
+  }
+  .cover-stats{display:flex;gap:14px;margin-top:34px;}
+  .cstat{flex:1;background:rgba(255,255,255,.08);border-radius:14px;padding:16px 14px;border:1px solid rgba(255,255,255,.15);}
+  .cstat .n{font-family:'Fraunces',serif;font-size:34px;font-weight:700;color:var(--amber);line-height:1;}
+  .cstat .l{font-size:12px;color:#cfe9e5;margin-top:6px;letter-spacing:.4px;}
+  .cover-foot{font-size:13px;color:#aedbd5;border-top:1px solid rgba(255,255,255,.2);padding-top:14px;}
+  .cover-promise{
+    margin-top:30px;background:rgba(232,140,26,.16);border-left:4px solid var(--amber);
+    border-radius:0 12px 12px 0;padding:16px 20px;font-size:15.5px;color:#fff;font-weight:500;
+  }
+
+  /* ---------- TRACKER PAGE ---------- */
+  .lead{font-size:16px;color:var(--ink-soft);max-width:560px;margin-bottom:24px;}
+  .section-eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);font-weight:800;margin-bottom:8px;}
+  h2.big{font-size:38px;font-weight:700;line-height:1.05;margin-bottom:6px;}
+  .tracker{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin:28px 0;}
+  .day-chip{border:1.5px solid var(--line);border-radius:12px;padding:14px 8px;text-align:center;background:#fff;}
+  .day-chip .d{font-size:11px;letter-spacing:1px;color:var(--teal);font-weight:800;text-transform:uppercase;}
+  .day-chip .t{font-family:'Fraunces',serif;font-size:13.5px;font-weight:600;margin-top:8px;line-height:1.2;min-height:32px;}
+  .day-chip .box{width:20px;height:20px;border:2px solid var(--line);border-radius:5px;margin:10px auto 0;}
+  .howto{background:var(--teal-l);border-radius:16px;padding:24px 26px;margin-top:18px;}
+  .howto h3{font-size:21px;color:var(--teal-d);margin-bottom:14px;}
+  .howto ol{margin-left:18px;}
+  .howto li{margin-bottom:9px;font-size:15px;color:var(--ink-soft);}
+  .howto li b{color:var(--ink);}
+  .motivation{margin-top:22px;font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--teal-d);border-left:4px solid var(--amber);padding-left:18px;}
+
+  /* ---------- CHAPTER PAGE ---------- */
+  .ch-head{display:flex;align-items:flex-start;gap:16px;border-bottom:2.5px solid var(--ink);padding-bottom:9px;margin-bottom:12px;}
+  .ch-num{font-family:'Fraunces',serif;font-size:46px;font-weight:700;color:var(--amber);line-height:.85;}
+  .ch-meta .day{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:800;}
+  .ch-meta h2{font-size:31px;font-weight:700;line-height:1.0;margin-top:3px;}
+  .ch-meta .why{font-size:12.5px;color:var(--ink-soft);margin-top:6px;max-width:430px;line-height:1.4;}
+
+  .block-label{display:inline-block;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;padding:3px 11px;border-radius:30px;margin-bottom:8px;}
+  .lab-concept{background:var(--teal-l);color:var(--teal-d);}
+  .lab-example{background:var(--amber-l);color:#a05a05;}
+  .lab-practice{background:var(--green-l);color:#1d6b39;}
+
+  .concept p{font-size:12.5px;color:var(--ink-soft);margin-bottom:5px;}
+  .concept ul{margin:4px 0 8px 20px;}
+  .concept li{font-size:12.5px;margin-bottom:3px;color:var(--ink-soft);line-height:1.4;}
+  .concept b{color:var(--ink);}
+  .formula{background:#fff;border:var(--rule);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:8px 14px;margin:6px 0;font-size:12.5px;}
+  .formula .eq{font-family:'Fraunces',serif;font-weight:600;color:var(--teal-d);font-size:14.5px;}
+
+  .trick{background:var(--amber-l);border:1.5px solid #f0cd95;border-radius:12px;padding:11px 16px;margin:10px 0;}
+  .trick h4{font-size:13px;color:#a05a05;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;display:flex;align-items:center;gap:8px;}
+  .trick p{font-size:12.5px;color:#7a4a08;margin:0;line-height:1.4;}
+
+  .example{background:#fff;border:var(--rule);border-radius:12px;padding:11px 17px;margin:8px 0;}
+  .example .q{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+  .example .opts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:12px;}
+  .example .opts span{font-size:13.5px;color:var(--ink-soft);}
+  .example .sol{font-size:12.5px;color:var(--ink-soft);background:var(--teal-l);border-radius:9px;padding:9px 13px;line-height:1.45;}
+  .example .sol b{color:var(--teal-d);}
+  .ans-tag{display:inline-block;background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px;margin-top:8px;letter-spacing:.5px;}
+
+  .practice{margin-top:6px;}
+  .pq{background:#fff;border:var(--rule);border-radius:10px;padding:8px 14px;margin-bottom:6px;}
+  .pq .pnum{font-family:'Fraunces',serif;font-weight:700;color:var(--amber);font-size:15px;}
+  .pq .pq-text{font-size:12.5px;color:var(--ink);font-weight:500;margin:2px 0 5px;line-height:1.35;}
+  .pq .opts{font-size:12px;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:3px 16px;}
+
+  .answer-strip{margin-top:10px;background:var(--ink);color:#fff;border-radius:10px;padding:9px 16px;font-size:13px;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center;}
+  .answer-strip .hint{color:#9fe0d8;font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:1.5px;}
+  .answer-strip .keys{font-family:'Fraunces',serif;font-weight:600;font-size:15px;letter-spacing:2px;}
+
+  .footer{margin-top:10px;display:flex;justify-content:space-between;font-size:10px;color:#9a9485;border-top:1px solid var(--line);padding-top:6px;}
+  .footer b{color:var(--teal);}
+
+  /* ---------- CTA PAGE ---------- */
+  .cta-page{background:linear-gradient(160deg,#0a4f4f,#063838);color:#fff;display:flex;flex-direction:column;justify-content:center;}
+  .cta-page h2{font-size:46px;line-height:1.05;margin-bottom:18px;}
+  .cta-page h2 span{color:var(--amber);}
+  .cta-page p{font-size:17px;color:#dff1ee;max-width:480px;margin-bottom:14px;}
+  .cta-list{margin:18px 0 26px;}
+  .cta-list div{font-size:16px;margin-bottom:12px;color:#eafaf7;display:flex;gap:12px;align-items:flex-start;}
+  .cta-list .ic{color:var(--amber);font-weight:800;font-family:'Fraunces',serif;}
+  .cta-btn{display:inline-block;background:var(--amber);color:#1a1200;font-weight:800;font-size:18px;padding:16px 38px;border-radius:50px;letter-spacing:.5px;text-decoration:none;}
+  .cta-sub{font-size:13px;color:#aedbd5;margin-top:16px;}
+  .svg-icon{width:16px;height:16px;vertical-align:middle;}
+</style>
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+<section class="page cover">
+  <div>
+    <div class="eyebrow">UPSC Prelims · Paper II · CSAT</div>
+    <h1>7-Day CSAT<br><span>Booster Plan</span></h1>
+    <p class="sub">Ek chapter daily. Concept + solved example + 3 practice questions. Bilkul exam-level. Sirf 7 din mein apne CSAT confidence ko boost karo.</p>
+    <div class="cover-badge">⏱ Roznana 30–40 minute · No fluff</div>
+    <div class="cover-promise">"Itna kar liya, ab CSAT clear ho jaayega" — yeh feeling lana hi is plan ka maqsad hai.</div>
+  </div>
+  <div>
+    <div class="cover-stats">
+      <div class="cstat"><div class="n">7</div><div class="l">Core Chapters</div></div>
+      <div class="cstat"><div class="n">7</div><div class="l">Solved Examples</div></div>
+      <div class="cstat"><div class="n">21</div><div class="l">Practice Qs</div></div>
+      <div class="cstat"><div class="n">33%</div><div class="l">Qualifying Target</div></div>
+    </div>
+    <div class="cover-foot" style="margin-top:24px;">CSAT ek qualifying paper hai — par har saal yahi hazaaron aspirants ko rok deta hai. Yeh booster aapko Day-1 se exam-pattern par leke chalta hai.</div>
+  </div>
+</section>
+
+<!-- ===================== TRACKER / HOW TO USE ===================== -->
+<section class="page">
+  <div class="section-eyebrow">Your 7-Day Journey</div>
+  <h2 class="big">Roadmap &amp; Daily Tracker</h2>
+  <p class="lead">Har din ek chapter. Khatam karne par box tick karo. 7 din baad aapke paas 7 concepts, 7 solved examples aur 21 practice questions ka solid base hoga.</p>
+
+  <div class="tracker">
+    <div class="day-chip"><div class="d">Day 1</div><div class="t">Number System</div><div class="box"></div></div>
+    <div class="day-chip"><div class="d">Day 2</div><div class="t">Divisibility &amp; Remainder</div><div class="box"></div></div>
+    <div class="day-chip"><div class="d">Day 3</div><div class="t">Percentage</div><div class="box"></div></div>
+    <div class="day-chip"><div class="d">Day 4</div><div class="t">Average</div><div class="box"></div></div>
+    <div class="day-chip"><div class="d">Day 5</div><div class="t">Speed, Time &amp; Distance</div><div class="box"></div></div>
+    <div class="day-chip"><div class="d">Day 6</div><div class="t">Syllogism</div><div class="box"></div></div>
+    <div class="day-chip"><div class="d">Day 7</div><div class="t">Direction &amp; Distance</div><div class="box"></div></div>
+  </div>
+
+  <div class="howto">
+    <h3>Har din ka 3-step method</h3>
+    <ol>
+      <li><b>Samajho (10 min):</b> Chapter ka concept aur shortcut box padho. Formula ek baar likho.</li>
+      <li><b>Dekho (10 min):</b> Solved example ko bina dekhe khud solve karne ki koshish karo, phir solution match karo.</li>
+      <li><b>Karo (15 min):</b> 3 practice questions solve karo. Answer strip se check karo aur galti ka reason note karo.</li>
+    </ol>
+  </div>
+
+  <p class="motivation">"7 chhote din. 7 bade jeet. Har tick ke saath aapka CSAT score upar."</p>
+
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 0</b> · Get Set Go</span></div>
+</section>
+
+<!-- ===================== DAY 1: NUMBER SYSTEM ===================== -->
+<section class="page">
+  <div class="ch-head">
+    <div class="ch-num">01</div>
+    <div class="ch-meta">
+      <div class="day">Day 1</div>
+      <h2>Number System</h2>
+      <div class="why">CSAT mein numbers ki properties par seedha 1–2 question har saal aate hain. Yeh poori arithmetic ki neenv hai.</div>
+    </div>
+  </div>
+
+  <span class="block-label lab-concept">Concept</span>
+  <div class="concept">
+    <p><b>Classification:</b> Natural (1,2,3…), Whole (0,1,2…), Integers (…−2,−1,0,1,2…), Rational (p/q form), Irrational (√2, π).</p>
+    <ul>
+      <li><b>Even/Odd:</b> Even ± Even = Even; Odd ± Odd = Even; Even ± Odd = Odd.</li>
+      <li><b>Prime:</b> 1 se bada, sirf 1 aur khud se divisible. 2 hi ekmaatra even prime hai.</li>
+      <li><b>Place value vs Face value:</b> Face value = digit khud; Place value = digit × uski jagah ki value.</li>
+    </ul>
+    <div class="formula">
+      <div class="eq">Sum of first n naturals = n(n+1)/2</div>
+      Sum of first n odd numbers = n² &nbsp;·&nbsp; Sum of squares = n(n+1)(2n+1)/6
+    </div>
+  </div>
+
+  <div class="trick">
+    <h4>⚡ CSAT Shortcut</h4>
+    <p>Kisi bhi number ke last digit se hi unit-digit nikal jaata hai. Bade product/power mein sirf last digits multiply karo — pura calculation karne ki zaroorat nahi.</p>
+  </div>
+
+  <span class="block-label lab-example">Solved Example</span>
+  <div class="example">
+    <div class="q">1 se 100 tak ke sabhi natural numbers ka sum kya hoga?</div>
+    <div class="opts"><span>(a) 4950</span><span>(b) 5050</span><span>(c) 5100</span><span>(d) 5000</span></div>
+    <div class="sol">Formula: n(n+1)/2 = 100 × 101 / 2 = <b>5050</b>. Direct formula lagao, ek-ek jodne ki zaroorat nahi.</div>
+    <div class="ans-tag">Answer: (b) 5050</div>
+  </div>
+
+  <span class="block-label lab-practice">Practice — Solve Now</span>
+  <div class="practice">
+    <div class="pq"><span class="pnum">Q1.</span><div class="pq-text">7^85 ka unit digit kya hoga?</div><div class="opts"><span>(a) 1</span><span>(b) 3</span><span>(c) 7</span><span>(d) 9</span></div></div>
+    <div class="pq"><span class="pnum">Q2.</span><div class="pq-text">Do consecutive even numbers ka product 168 hai. Bada number kaunsa?</div><div class="opts"><span>(a) 12</span><span>(b) 14</span><span>(c) 16</span><span>(d) 18</span></div></div>
+    <div class="pq"><span class="pnum">Q3.</span><div class="pq-text">Pehle 20 odd numbers ka sum kitna hai?</div><div class="opts"><span>(a) 380</span><span>(b) 400</span><span>(c) 420</span><span>(d) 441</span></div></div>
+  </div>
+
+  <div class="answer-strip"><span class="hint">Answers</span><span class="keys">Q1 → c &nbsp;·&nbsp; Q2 → b &nbsp;·&nbsp; Q3 → b</span></div>
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 1</b> · Number System</span></div>
+</section>
+
+<!-- ===================== DAY 2: DIVISIBILITY & REMAINDER ===================== -->
+<section class="page">
+  <div class="ch-head">
+    <div class="ch-num">02</div>
+    <div class="ch-meta">
+      <div class="day">Day 2</div>
+      <h2>Divisibility &amp; Remainder</h2>
+      <div class="why">Divisibility rules calculation ko seconds mein kaat dete hain — CSAT ki time-pressure mein yeh game-changer hai.</div>
+    </div>
+  </div>
+
+  <span class="block-label lab-concept">Concept</span>
+  <div class="concept">
+    <ul>
+      <li><b>÷2:</b> last digit even. <b>÷3:</b> digit-sum 3 ka multiple. <b>÷4:</b> last 2 digits 4 se divisible.</li>
+      <li><b>÷5:</b> last digit 0 ya 5. <b>÷6:</b> 2 aur 3 dono se divisible. <b>÷9:</b> digit-sum 9 ka multiple.</li>
+      <li><b>÷11:</b> (odd-place ka sum) − (even-place ka sum) = 0 ya 11 ka multiple.</li>
+    </ul>
+    <div class="formula">
+      <div class="eq">Dividend = Divisor × Quotient + Remainder</div>
+      Yahi relation har remainder problem ki jaan hai.
+    </div>
+  </div>
+
+  <div class="trick">
+    <h4>⚡ CSAT Shortcut</h4>
+    <p>Bade power ka remainder nikalna ho toh <b>cyclicity / pattern</b> dhoondo. Jaise 2^n ko 7 se divide karne par remainders 2,4,1 repeat hote hain (cycle of 3).</p>
+  </div>
+
+  <span class="block-label lab-example">Solved Example</span>
+  <div class="example">
+    <div class="q">17 × 23 × 35 ko 5 se divide karne par remainder kya hoga?</div>
+    <div class="opts"><span>(a) 0</span><span>(b) 1</span><span>(c) 2</span><span>(d) 3</span></div>
+    <div class="sol">Product mein 35 hai jo 5 ka multiple hai → poora product 5 se divisible → remainder <b>0</b>. Pura multiply karne ki zaroorat nahi.</div>
+    <div class="ans-tag">Answer: (a) 0</div>
+  </div>
+
+  <span class="block-label lab-practice">Practice — Solve Now</span>
+  <div class="practice">
+    <div class="pq"><span class="pnum">Q1.</span><div class="pq-text">Number 3_5 (beech ka digit gayab) 9 se divisible hone ke liye gayab digit kya ho?</div><div class="opts"><span>(a) 0</span><span>(b) 1</span><span>(c) 7</span><span>(d) 9</span></div></div>
+    <div class="pq"><span class="pnum">Q2.</span><div class="pq-text">2^50 ko 7 se divide karne par remainder?</div><div class="opts"><span>(a) 1</span><span>(b) 2</span><span>(c) 4</span><span>(d) 6</span></div></div>
+    <div class="pq"><span class="pnum">Q3.</span><div class="pq-text">Sabse chhota number kaunsa jise 12, 15 aur 20 se divide karne par har baar remainder 5 bache?</div><div class="opts"><span>(a) 55</span><span>(b) 60</span><span>(c) 65</span><span>(d) 125</span></div></div>
+  </div>
+
+  <div class="answer-strip"><span class="hint">Answers</span><span class="keys">Q1 → b &nbsp;·&nbsp; Q2 → c &nbsp;·&nbsp; Q3 → c</span></div>
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 2</b> · Divisibility &amp; Remainder</span></div>
+</section>
+
+<!-- ===================== DAY 3: PERCENTAGE ===================== -->
+<section class="page">
+  <div class="ch-head">
+    <div class="ch-num">03</div>
+    <div class="ch-meta">
+      <div class="day">Day 3</div>
+      <h2>Percentage</h2>
+      <div class="why">Data interpretation, comparison, growth — CSAT ka aadha arithmetic ghoom-phir ke percentage par aata hai.</div>
+    </div>
+  </div>
+
+  <span class="block-label lab-concept">Concept</span>
+  <div class="concept">
+    <p><b>Percentage</b> ka matlab "per 100". x% = x/100.</p>
+    <div class="formula">
+      <div class="eq">Change % = (New − Old)/Old × 100</div>
+      Successive change a% then b% → net = a + b + (ab/100) %
+    </div>
+    <ul>
+      <li><b>Fraction ↔ %:</b> 1/2=50%, 1/4=25%, 1/5=20%, 1/8=12.5%, 1/3≈33.33%.</li>
+      <li>Agar A, B se x% zyada hai, toh B, A se x/(100+x)×100 % kam hota hai (ulta seedha nahi).</li>
+    </ul>
+  </div>
+
+  <div class="trick">
+    <h4>⚡ CSAT Shortcut</h4>
+    <p>Common fractions yaad rakho. "37.5% of 80" sochne ke bajaye 3/8 × 80 = 30 — instant. Percentage ko fraction mein badalna sabse fast tarika hai.</p>
+  </div>
+
+  <span class="block-label lab-example">Solved Example</span>
+  <div class="example">
+    <div class="q">Ek vastu ki keemat pehle 20% badhi phir 20% ghati. Net kya badlaav hua?</div>
+    <div class="opts"><span>(a) 0% (no change)</span><span>(b) 4% increase</span><span>(c) 4% decrease</span><span>(d) 2% decrease</span></div>
+    <div class="sol">Net = +20 − 20 + (20×−20/100) = −4 → <b>4% decrease</b>. Successive change kabhi cancel nahi hota — yahi trap hai.</div>
+    <div class="ans-tag">Answer: (c) 4% decrease</div>
+  </div>
+
+  <span class="block-label lab-practice">Practice — Solve Now</span>
+  <div class="practice">
+    <div class="pq"><span class="pnum">Q1.</span><div class="pq-text">Ek shahar ki aabaadi 25% badhkar 10,000 ho gayi. Pehle kitni thi?</div><div class="opts"><span>(a) 7500</span><span>(b) 8000</span><span>(c) 8500</span><span>(d) 9000</span></div></div>
+    <div class="pq"><span class="pnum">Q2.</span><div class="pq-text">62.5% of 320 = ?</div><div class="opts"><span>(a) 180</span><span>(b) 200</span><span>(c) 220</span><span>(d) 240</span></div></div>
+    <div class="pq"><span class="pnum">Q3.</span><div class="pq-text">A ki salary B se 25% zyada hai. B ki salary A se kitne % kam hai?</div><div class="opts"><span>(a) 20%</span><span>(b) 25%</span><span>(c) 16.66%</span><span>(d) 33.33%</span></div></div>
+  </div>
+
+  <div class="answer-strip"><span class="hint">Answers</span><span class="keys">Q1 → b &nbsp;·&nbsp; Q2 → b &nbsp;·&nbsp; Q3 → a</span></div>
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 3</b> · Percentage</span></div>
+</section>
+
+<!-- ===================== DAY 4: AVERAGE ===================== -->
+<section class="page">
+  <div class="ch-head">
+    <div class="ch-num">04</div>
+    <div class="ch-meta">
+      <div class="day">Day 4</div>
+      <h2>Average</h2>
+      <div class="why">Average ke sawaal seedhe aur scoring hote hain — agar concept clear ho toh poora marks pakka.</div>
+    </div>
+  </div>
+
+  <span class="block-label lab-concept">Concept</span>
+  <div class="concept">
+    <div class="formula">
+      <div class="eq">Average = Sum of observations / Number of observations</div>
+      Sum = Average × Number &nbsp;(yeh ulta form hi 80% problems solve karta hai)
+    </div>
+    <ul>
+      <li><b>Consecutive numbers ka average</b> = (first + last)/2.</li>
+      <li>Agar har value mein k jodo/ghatao, toh average bhi k se badh/ghat jaata hai.</li>
+      <li><b>Weighted average:</b> alag-alag size ke groups ke liye = (n₁a₁ + n₂a₂)/(n₁+n₂).</li>
+    </ul>
+  </div>
+
+  <div class="trick">
+    <h4>⚡ CSAT Shortcut</h4>
+    <p>Naya member jud-ne par average ka change = (naye value − purana average)/(naya total count). "Deviation" se socho — har baar pura sum nikalne ki zaroorat nahi.</p>
+  </div>
+
+  <span class="block-label lab-example">Solved Example</span>
+  <div class="example">
+    <div class="q">11 logon ka average umra 28 saal hai. Agar teacher ko milaa lein toh average 1 saal badh jaata hai. Teacher ki umra?</div>
+    <div class="opts"><span>(a) 30</span><span>(b) 39</span><span>(c) 40</span><span>(d) 41</span></div>
+    <div class="sol">Naya average = 29, total ab 12 log. Teacher = naya sum − purana sum = (12×29) − (11×28) = 348 − 308 = <b>40</b>.</div>
+    <div class="ans-tag">Answer: (c) 40</div>
+  </div>
+
+  <span class="block-label lab-practice">Practice — Solve Now</span>
+  <div class="practice">
+    <div class="pq"><span class="pnum">Q1.</span><div class="pq-text">5 lagataar (consecutive) numbers ka average 17 hai. Sabse bada number?</div><div class="opts"><span>(a) 17</span><span>(b) 18</span><span>(c) 19</span><span>(d) 20</span></div></div>
+    <div class="pq"><span class="pnum">Q2.</span><div class="pq-text">Ek class mein 20 ladkon ka average 60 aur 30 ladkiyon ka average 70 hai. Poori class ka average?</div><div class="opts"><span>(a) 64</span><span>(b) 65</span><span>(c) 66</span><span>(d) 67</span></div></div>
+    <div class="pq"><span class="pnum">Q3.</span><div class="pq-text">Kisi cricketer ka 10 paari ka average 32 tha. 11vi paari ke baad average 34 ho gaya. 11vi paari mein kitne run banaye?</div><div class="opts"><span>(a) 52</span><span>(b) 54</span><span>(c) 56</span><span>(d) 58</span></div></div>
+  </div>
+
+  <div class="answer-strip"><span class="hint">Answers</span><span class="keys">Q1 → c &nbsp;·&nbsp; Q2 → c &nbsp;·&nbsp; Q3 → b</span></div>
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 4</b> · Average</span></div>
+</section>
+
+<!-- ===================== DAY 5: SPEED, TIME & DISTANCE ===================== -->
+<section class="page">
+  <div class="ch-head">
+    <div class="ch-num">05</div>
+    <div class="ch-meta">
+      <div class="day">Day 5</div>
+      <h2>Speed, Time &amp; Distance</h2>
+      <div class="why">Trains, boats, relative motion — CSAT ka favourite scoring zone. Ek formula se poora chapter chal jaata hai.</div>
+    </div>
+  </div>
+
+  <span class="block-label lab-concept">Concept</span>
+  <div class="concept">
+    <div class="formula">
+      <div class="eq">Speed = Distance / Time</div>
+      Distance constant → Speed ∝ 1/Time
+    </div>
+    <ul>
+      <li><b>Unit conversion:</b> km/h → m/s: × 5/18 &nbsp;·&nbsp; m/s → km/h: × 18/5.</li>
+      <li><b>Relative speed:</b> same direction → ghatao; opposite direction → jodo.</li>
+      <li><b>Average speed</b> (equal distance, do speeds) = 2xy/(x+y) — simple average nahi!</li>
+    </ul>
+  </div>
+
+  <div class="trick">
+    <h4>⚡ CSAT Shortcut</h4>
+    <p>Train ko pole/man cross karne ka time = train ki length / speed. Platform cross karne mein (train + platform) dono ki length jodo.</p>
+  </div>
+
+  <span class="block-label lab-example">Solved Example</span>
+  <div class="example">
+    <div class="q">Ek aadmi 4 km/h se jaata aur 6 km/h se wapas aata hai. Poore safar ki average speed?</div>
+    <div class="opts"><span>(a) 4.5 km/h</span><span>(b) 4.8 km/h</span><span>(c) 5 km/h</span><span>(d) 5.2 km/h</span></div>
+    <div class="sol">Equal distance → average = 2xy/(x+y) = (2×4×6)/(4+6) = 48/10 = <b>4.8 km/h</b>. (5 maan-na hi galti hai.)</div>
+    <div class="ans-tag">Answer: (b) 4.8 km/h</div>
+  </div>
+
+  <span class="block-label lab-practice">Practice — Solve Now</span>
+  <div class="practice">
+    <div class="pq"><span class="pnum">Q1.</span><div class="pq-text">72 km/h ko m/s mein badlo.</div><div class="opts"><span>(a) 18</span><span>(b) 20</span><span>(c) 24</span><span>(d) 25</span></div></div>
+    <div class="pq"><span class="pnum">Q2.</span><div class="pq-text">120 m lambi train 60 km/h se ek khambe ko kitne second mein paar karegi?</div><div class="opts"><span>(a) 6.2 s</span><span>(b) 7.2 s</span><span>(c) 8 s</span><span>(d) 9 s</span></div></div>
+    <div class="pq"><span class="pnum">Q3.</span><div class="pq-text">Do train opposite direction mein 50 aur 70 km/h se chal rahi hain. Relative speed?</div><div class="opts"><span>(a) 20 km/h</span><span>(b) 60 km/h</span><span>(c) 120 km/h</span><span>(d) 130 km/h</span></div></div>
+  </div>
+
+  <div class="answer-strip"><span class="hint">Answers</span><span class="keys">Q1 → b &nbsp;·&nbsp; Q2 → b &nbsp;·&nbsp; Q3 → c</span></div>
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 5</b> · Speed, Time &amp; Distance</span></div>
+</section>
+
+<!-- ===================== DAY 6: SYLLOGISM ===================== -->
+<section class="page">
+  <div class="ch-head">
+    <div class="ch-num">06</div>
+    <div class="ch-meta">
+      <div class="day">Day 6</div>
+      <h2>Syllogism</h2>
+      <div class="why">CSAT ke reasoning section ka pakka topic. Venn diagram seekh liya toh yeh sabse aasaan marks hai.</div>
+    </div>
+  </div>
+
+  <span class="block-label lab-concept">Concept</span>
+  <div class="concept">
+    <p>Syllogism = di gayi statements ko sach maan kar conclusions check karna. Best tool: <b>Venn diagram</b>.</p>
+    <ul>
+      <li><b>All A are B:</b> A poora B ke andar.</li>
+      <li><b>Some A are B:</b> A aur B overlap karte hain.</li>
+      <li><b>No A is B:</b> A aur B alag circles.</li>
+      <li><b>Rule:</b> Conclusion tabhi sahi jab woh <b>har possible</b> diagram mein sach ho. Ek bhi case fail = conclusion galat.</li>
+    </ul>
+  </div>
+
+  <div class="trick">
+    <h4>⚡ CSAT Shortcut</h4>
+    <p>"Some A are B" ka matlab hamesha "Some B are A" bhi hota hai (reverse valid). Par "All A are B" ka reverse "All B are A" zaroori nahi.</p>
+  </div>
+
+  <span class="block-label lab-example">Solved Example</span>
+  <div class="example">
+    <div class="q"><b>Statements:</b> All pens are books. All books are red. &nbsp;<b>Conclusions:</b> (I) All pens are red. (II) Some red are pens.</div>
+    <div class="opts"><span>(a) Only I follows</span><span>(b) Only II follows</span><span>(c) Both follow</span><span>(d) Neither follows</span></div>
+    <div class="sol">Pens ⊂ Books ⊂ Red → saare pens red hain (I sahi). Agar pens red hain toh kuch red zaroor pens hue (II sahi). <b>Dono follow karte hain.</b></div>
+    <div class="ans-tag">Answer: (c) Both follow</div>
+  </div>
+
+  <span class="block-label lab-practice">Practice — Solve Now</span>
+  <div class="practice">
+    <div class="pq"><span class="pnum">Q1.</span><div class="pq-text">Statements: All cats are dogs. Some dogs are cows. Conclusion: Some cats are cows.</div><div class="opts"><span>(a) Follows</span><span>(b) Does not follow</span><span>(c) Can't determine</span><span>(d) Data insufficient</span></div></div>
+    <div class="pq"><span class="pnum">Q2.</span><div class="pq-text">Statements: No man is a stone. All stones are rocks. Conclusion: Some rocks are not men.</div><div class="opts"><span>(a) Follows</span><span>(b) Does not follow</span><span>(c) Both follow</span><span>(d) None</span></div></div>
+    <div class="pq"><span class="pnum">Q3.</span><div class="pq-text">"Some teachers are doctors" sach hai. Toh inme se kaunsa zaroor sach hai?</div><div class="opts"><span>(a) Some doctors are teachers</span><span>(b) All teachers are doctors</span><span>(c) No teacher is a doctor</span><span>(d) All doctors are teachers</span></div></div>
+  </div>
+
+  <div class="answer-strip"><span class="hint">Answers</span><span class="keys">Q1 → b &nbsp;·&nbsp; Q2 → a &nbsp;·&nbsp; Q3 → a</span></div>
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 6</b> · Syllogism</span></div>
+</section>
+
+<!-- ===================== DAY 7: DIRECTION & DISTANCE ===================== -->
+<section class="page">
+  <div class="ch-head">
+    <div class="ch-num">07</div>
+    <div class="ch-meta">
+      <div class="day">Day 7</div>
+      <h2>Direction &amp; Distance</h2>
+      <div class="why">Ek rough diagram banao aur sawaal khud solve ho jaata hai — CSAT mein guaranteed easy marks.</div>
+    </div>
+  </div>
+
+  <span class="block-label lab-concept">Concept</span>
+  <div class="concept">
+    <ul>
+      <li><b>4 main directions:</b> North (upar), South (neeche), East (dayein), West (bayein).</li>
+      <li><b>Right turn</b> = clockwise (N→E→S→W); <b>Left turn</b> = anticlockwise (N→W→S→E).</li>
+      <li><b>Shortest distance</b> jab path mein 90° turn ho → <b>Pythagoras:</b> √(a² + b²).</li>
+    </ul>
+    <div class="formula">
+      <div class="eq">Shortest distance = √(horizontal² + vertical²)</div>
+      Net horizontal aur net vertical alag-alag jodo, phir Pythagoras.
+    </div>
+  </div>
+
+  <div class="trick">
+    <h4>⚡ CSAT Shortcut</h4>
+    <p>Hamesha North ko upar maan kar paper par diagram banao. Sunrise = East, sunset = West — shadow problems mein direction yahi se pakdo.</p>
+  </div>
+
+  <span class="block-label lab-example">Solved Example</span>
+  <div class="example">
+    <div class="q">Ravi 3 km North chalta hai, phir 4 km East. Starting point se uski seedhi doori?</div>
+    <div class="opts"><span>(a) 5 km</span><span>(b) 7 km</span><span>(c) 1 km</span><span>(d) 12 km</span></div>
+    <div class="sol">90° turn → Pythagoras: √(3² + 4²) = √(9+16) = √25 = <b>5 km</b>. Yeh classic 3-4-5 triangle hai.</div>
+    <div class="ans-tag">Answer: (a) 5 km</div>
+  </div>
+
+  <span class="block-label lab-practice">Practice — Solve Now</span>
+  <div class="practice">
+    <div class="pq"><span class="pnum">Q1.</span><div class="pq-text">Ek aadmi East ki taraf munh karke khada hai. Vo right turn leta hai, phir right turn. Ab kis direction mein hai?</div><div class="opts"><span>(a) North</span><span>(b) South</span><span>(c) East</span><span>(d) West</span></div></div>
+    <div class="pq"><span class="pnum">Q2.</span><div class="pq-text">Sita 6 km South, phir 8 km West chalti hai. Starting point se doori?</div><div class="opts"><span>(a) 10 km</span><span>(b) 12 km</span><span>(c) 14 km</span><span>(d) 2 km</span></div></div>
+    <div class="pq"><span class="pnum">Q3.</span><div class="pq-text">Subah ke samay aapki parchhai (shadow) aapke dayein (right) taraf padti hai. Toh aapka munh kis direction mein hai?</div><div class="opts"><span>(a) North</span><span>(b) South</span><span>(c) East</span><span>(d) West</span></div></div>
+  </div>
+
+  <div class="answer-strip"><span class="hint">Answers</span><span class="keys">Q1 → d &nbsp;·&nbsp; Q2 → a &nbsp;·&nbsp; Q3 → a</span></div>
+  <div class="footer"><span>7-Day CSAT Booster Plan</span><span><b>Day 7</b> · Direction &amp; Distance</span></div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="page cta-page">
+  <div class="section-eyebrow" style="color:#9fe0d8;">You did it — 7 days, 7 chapters</div>
+  <h2>Ab aage badho.<br><span>CSAT poora crack karo.</span></h2>
+  <p>Yeh sirf shuruaat thi. Agar 7 din mein itna confidence aaya, toh sochiye poore structured course mein kya hoga.</p>
+  <div class="cta-list">
+    <div><span class="ic">›</span> 50+ chapters · har topic ke 100+ exam-level questions</div>
+    <div><span class="ic">›</span> Full-length CSAT mock tests with detailed solutions</div>
+    <div><span class="ic">›</span> Shortcut library + previous year papers (solved)</div>
+    <div><span class="ic">›</span> Doubt support &amp; weekly performance tracking</div>
+  </div>
+  <a class="cta-btn" href="#">Join the Full CSAT Course →</a>
+  <p class="cta-sub">Apni 7-day streak ko 70-day mastery mein badlo. Aaj hi enroll karo.</p>
+</section>
+
+</body>
+</html>
